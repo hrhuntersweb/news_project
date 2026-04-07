@@ -12,7 +12,7 @@
     <div class="sidebar-logo">Admin<span>Panel</span></div>
     <ul class="sidebar-menu">
       <li><span class="sidebar-section">Main</span></li>
-      <li><a href="index.html"><span class="icon">&#9632;</span> Dashboard</a></li>
+      <li><a href="samir.php"><span class="icon">&#9632;</span> Dashboard</a></li>
       <li><span class="sidebar-section">Content</span></li>
       <li><a href="news.html" class="active"><span class="icon">&#128240;</span> News</a></li>
       <li><a href="categories.html"><span class="icon">&#128193;</span> Categories</a></li>

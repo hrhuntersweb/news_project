@@ -495,7 +495,7 @@ textarea.form-control { resize: vertical; min-height: 90px; }
   display: grid;
   grid-template-columns: 1fr 300px;
   gap: 20px;
-  align-items: start;
+  align-items: stretch;
 }
 
 .form-main,
@@ -503,6 +503,23 @@ textarea.form-control { resize: vertical; min-height: 90px; }
   display: flex;
   flex-direction: column;
   gap: 0;
+}
+
+.form-sidebar .card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-sidebar .card .card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-sidebar .card .card-body .form-actions {
+  margin-top: auto;
+  padding-top: 16px;
 }
 
 .form-textarea {
@@ -539,4 +556,14 @@ textarea.form-control { resize: vertical; min-height: 90px; }
   .settings-row { flex-direction: column; }
   .settings-label { min-width: unset; }
   .form-layout { grid-template-columns: 1fr; }
+}
+
+.success-message {
+    background: #d1e7dd;
+    color: #0f5132;
+    padding: 14px 20px;
+    border-radius: 6px;
+    border-left: 5px solid #198754;
+    margin-bottom: 15px;
+    font-weight: 500;
 }

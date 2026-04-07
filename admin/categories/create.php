@@ -3,7 +3,7 @@ include('../layout/header.php');
 ?>
 
 <div class="content">
-    <form action="#" method="post">
+    <form action="addController.php" method="post">
         <div class="form-layout">
 
             <div class="form-main">
@@ -11,6 +11,7 @@ include('../layout/header.php');
                     <div class="card-header">
                         <h2>Category Info</h2>
                     </div>
+
                     <div class="card-body">
                         <div class="form-group">
                             <label for="title">Title</label>

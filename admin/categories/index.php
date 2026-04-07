@@ -1,5 +1,8 @@
 <?php
 include('../layout/header.php');
+
+$result = $conn->query("SELECT * FROM categories");
+$categories = $result->fetch_all(MYSQLI_ASSOC);
 ?>
 
 <div class="content">
@@ -11,105 +14,39 @@ include('../layout/header.php');
                 <a href="create.php" class="btn btn-primary">+ Add Category</a>
             </div>
         </div>
-
+        <?php
+        if(isset($_GET['insert_msg'])){
+           echo "<h4 class='success-message'>". "✅" .$_GET['insert_msg']."</h4>";
+        }
+        ?>
         <div class="table-wrap">
             <table>
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Name</th>
+                        <th>Title</th>
+                        <th>Description</th>
                         <th>Slug</th>
-                        <th>Articles</th>
                         <th>Status</th>
-                        <th>Created</th>
+                        <th>Home</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <?php foreach($categories as $category){ ?>
                     <tr>
-                        <td>1</td>
-                        <td>Science</td>
-                        <td>science</td>
-                        <td>12</td>
-                        <td><span class="badge badge-success">Active</span></td>
-                        <td>2025-01-10</td>
+                        <td><?= $category['id'] ?></td>
+                        <td><?= $category['title'] ?></td>
+                        <td><?= $category['description'] ?></td>
+                        <td><?= $category['slug'] ?></td>
+                        <td><?= $category['status'] ?></td>
+                        <td><?= $category['home'] ?></td>
                         <td>
                             <a href="categories-edit.html" class="btn btn-warning btn-sm">Edit</a>
                             <button class="btn btn-danger btn-sm" onclick="openModal('deleteModal')">Delete</button>
                         </td>
                     </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Sports</td>
-                        <td>sports</td>
-                        <td>9</td>
-                        <td><span class="badge badge-success">Active</span></td>
-                        <td>2025-01-10</td>
-                        <td>
-                            <a href="categories-edit.html" class="btn btn-warning btn-sm">Edit</a>
-                            <button class="btn btn-danger btn-sm" onclick="openModal('deleteModal')">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Technology</td>
-                        <td>technology</td>
-                        <td>15</td>
-                        <td><span class="badge badge-success">Active</span></td>
-                        <td>2025-01-11</td>
-                        <td>
-                            <a href="categories-edit.html" class="btn btn-warning btn-sm">Edit</a>
-                            <button class="btn btn-danger btn-sm" onclick="openModal('deleteModal')">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Politics</td>
-                        <td>politics</td>
-                        <td>7</td>
-                        <td><span class="badge badge-success">Active</span></td>
-                        <td>2025-01-12</td>
-                        <td>
-                            <a href="categories-edit.html" class="btn btn-warning btn-sm">Edit</a>
-                            <button class="btn btn-danger btn-sm" onclick="openModal('deleteModal')">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>Culture</td>
-                        <td>culture</td>
-                        <td>4</td>
-                        <td><span class="badge badge-warning">Inactive</span></td>
-                        <td>2025-02-01</td>
-                        <td>
-                            <a href="categories-edit.html" class="btn btn-warning btn-sm">Edit</a>
-                            <button class="btn btn-danger btn-sm" onclick="openModal('deleteModal')">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>Economy</td>
-                        <td>economy</td>
-                        <td>6</td>
-                        <td><span class="badge badge-success">Active</span></td>
-                        <td>2025-02-05</td>
-                        <td>
-                            <a href="categories-edit.html" class="btn btn-warning btn-sm">Edit</a>
-                            <button class="btn btn-danger btn-sm" onclick="openModal('deleteModal')">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                        <td>Health</td>
-                        <td>health</td>
-                        <td>0</td>
-                        <td><span class="badge badge-warning">Inactive</span></td>
-                        <td>2025-03-15</td>
-                        <td>
-                            <a href="categories-edit.html" class="btn btn-warning btn-sm">Edit</a>
-                            <button class="btn btn-danger btn-sm" onclick="openModal('deleteModal')">Delete</button>
-                        </td>
-                    </tr>
+                    <?php } ?>
                 </tbody>
             </table>
         </div>

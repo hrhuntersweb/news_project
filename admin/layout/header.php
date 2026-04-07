@@ -23,6 +23,6 @@ include(__DIR__.'/../config/db.php');
             <div class="topbar-title">Dashboard</div>
             <div class="topbar-user">
                 <div class="avatar">A</div>
-                Admin
+                Oder
             </div>
         </header>
