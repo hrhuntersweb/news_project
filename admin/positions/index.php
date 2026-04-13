@@ -36,7 +36,7 @@ $positions = $result->fetch_all(MYSQLI_ASSOC);
                         <td><?= $position['title'] ?></td>
                         <td><?= $position['status'] ?></td>
                         <td>
-                            <a href="positions-edit.html" class="btn btn-warning btn-sm">Edit</a>
+                            <a href="update.php?id=<?= $position['id'] ?>" class="btn btn-warning btn-sm">Edit</a>
                             <button class="btn btn-danger btn-sm" onclick="openModal('deleteModal')">Delete</button>
                         </td>
                     </tr>

@@ -17,6 +17,11 @@ $news = $result->fetch_all(MYSQLI_ASSOC);
                 <a href="create.php" class="btn btn-primary">+ Add News</a>
             </div>
         </div>
+        <?php
+        if(isset($_GET['insert_msg'])){
+           echo "<h4 class='success-message'>". "✅" .$_GET['insert_msg']."</h4>";
+        }
+        ?>
 
         <div class="table-wrap">
             <table>
